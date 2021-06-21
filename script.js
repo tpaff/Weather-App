@@ -24,7 +24,6 @@ function getTime() {
 getTime();
 
 function getGeoLocal(response) {
-  console.log(response);
   let newLocation = document.querySelector("#location-found");
   newLocation.innerHTML = `${response.data.name}`;
   let temperatureDisplay = document.querySelector(`#numerical-temperature`);
