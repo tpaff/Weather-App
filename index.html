@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather App</h1>
+      <div class="row">
+        <div class="col-7 temp-banner">Current Temperature</div>
+        <div class="col-5 forcast">5 Day Forcast</div>
+      </div>
+      <div class="row">
+        <div class="card col-7">
+          <div class="card-body card-style">
+            <h5 class="card-title">
+              <span id="numerical-temperature">80</span>°
+              <span id="celcius-link"> <a href="#">C</a> </span>|
+              <span id="fahrenheit-link">
+                <a href="#">F</a>
+              </span>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">high/low</h6>
+            <p class="card-text" id="location-found">
+              San Jose <br />
+              Costa Rica
+            </p>
+            <p id="current-time">
+              <span id="current-date">Tuesday </span
+              ><span id="exact-time">16:00</span>
+            </p>
+          </div>
+        </div>
+        <div class="card col-5">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Tomorrow: high/low</li>
+            <li class="list-group-item">Friday: high/low</li>
+            <li class="list-group-item">Saturday: high/low</li>
+
+            <li class="list-group-item">Sunday: high/low</li>
+
+            <li class="list-group-item">Monday: high/low</li>
+          </ul>
+        </div>
+        <form id="location-form">
+          <input type="text" placeholder="New Location" id="location-input" />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+h1 {
+}
+.temp-banner {
+  border: 1px solid orange;
+  text-align: center;
+  padding: 5px 0;
+}
+.forcast {
+  border: 1px solid purple;
+  text-align: center;
+  padding: 5px 0;
+}
+.actual-temp {
+}
+.predicted-temp {
+}
+.city-location {
+}
+.country-location {
+}
+.card-style {
+  padding: 10px;
+  text-align: left;
+}
+.diff-day {
+  list-style: none;
+  font-size: 12px;
+}
