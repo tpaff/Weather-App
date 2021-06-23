@@ -22,6 +22,17 @@ function getTime() {
   currentTime.innerHTML = `${hour}:${minute}`;
 }
 getTime();
+function locationInput(event) {
+  event.preventDefault();
+  let location = document.querySelector("#location-input");
+  let locationFound = document.querySelector("#location-found");
+  let cityName = `${location.value}`;
+  let apiKey = `c3bfba90b1c5452842fe95db5fc692a0`;
+  let units = `metric`;
+  let cityApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`;
+  locationFound.innerHTML = `${location.value}`;
+  axios.get(cityApiUrl).then(findNewTemp);
+}
 
 function findNewTemp(response) {
   let newLocation = document.querySelector("#location-found");
@@ -47,19 +58,14 @@ function findNewTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let currentConditionElement = document.querySelector("#current-condition");
+  currentConditionElement.innerHTML = `${response.data.weather[0].description}`;
+  let windSpeedDisplay = document.querySelector("#wind-speed");
+  windSpeedDisplay.innerHTML = `${Math.round(response.data.wind.speed)}`;
+  let humidityDisplay = document.querySelector("#humidity");
+  humidityDisplay.innerHTML = `${response.data.main.humidity}`;
 }
 
-function locationInput(event) {
-  event.preventDefault();
-  let location = document.querySelector("#location-input");
-  let locationFound = document.querySelector("#location-found");
-  let cityName = `${location.value}`;
-  let apiKey = `c3bfba90b1c5452842fe95db5fc692a0`;
-  let units = `metric`;
-  let cityApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`;
-  locationFound.innerHTML = `${location.value}`;
-  axios.get(cityApiUrl).then(findNewTemp);
-}
 let locationForm = document.querySelector("#location-form");
 locationForm.addEventListener("submit", locationInput);
 function currentLocationInput(event) {
@@ -88,7 +94,12 @@ function currentLocationInput(event) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-    console.log(response.data.weather[0].icon);
+    let windSpeedDisplay = document.querySelector("#wind-speed");
+    windSpeedDisplay.innerHTML = `${Math.round(response.data.wind.speed)}`;
+    let humidityDisplay = document.querySelector("#humidity");
+    humidityDisplay.innerHTML = `${response.data.main.humidity}`;
+    let currentConditionElement = document.querySelector("#current-condition");
+    currentConditionElement.innerHTML = `${response.data.weather[0].description}`;
   }
   function showCurrentPosition(response) {
     let lon = response.coords.longitude;
