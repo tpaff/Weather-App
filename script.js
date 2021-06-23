@@ -55,6 +55,8 @@ function locationInput(event) {
   locationFound.innerHTML = `${location.value}`;
   axios.get(cityApiUrl).then(findNewTemp);
 }
+let locationForm = document.querySelector("#location-form");
+locationForm.addEventListener("submit", locationInput);
 function currentLocationInput(event) {
   event.preventDefault();
   function getGeoLocal(response) {
@@ -87,7 +89,6 @@ function currentLocationInput(event) {
   }
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
-let locationForm = document.querySelector("#location-form");
-locationForm.addEventListener("submit", locationInput);
-let myLocationForm = document.querySelector("#location-form");
-myLocationForm.addEventListener("#current-location", currentLocationInput);
+
+let myLocationForm = document.querySelector("#current-location");
+myLocationForm.addEventListener("submit", currentLocationInput);
