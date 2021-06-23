@@ -53,7 +53,6 @@ function showCurrentPosition(response) {
 }
 navigator.geolocation.getCurrentPosition(showCurrentPosition);
 function findNewTemp(response) {
-  console.log(response);
   let newLocation = document.querySelector("#location-found");
   newLocation.innerHTML = `${response.data.name}`;
   let temperatureDisplay = document.querySelector(`#numerical-temperature`);

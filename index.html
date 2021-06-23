@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>TP Weather App</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
@@ -27,6 +27,11 @@
         <div class="card col-7">
           <div class="card-body card-style">
             <h5 class="card-title">
+              <span id="icon"
+                ><img
+                  src="http://openweathermap.org/img/wn/01d@2x.png"
+                  alt="clear sky symbol"
+              /></span>
               <span id="numerical-temperature">80</span>°
               <span id="celcius-link"> <a href="#">C</a> </span>|
               <span id="fahrenheit-link">
@@ -60,7 +65,8 @@
           <input type="submit" value="Submit" />
         </form>
       </div>
-      <a href="https://github.com/tpaff/Weather-App" class:"source-link">Open Source Link </a>by Tedi Paffile
+      <a href="https://github.com/tpaff/Weather-App" class:"source-link">Open
+      Source Link <br />by Tedi Paffile
     </div>
     <script src="script.js"></script>
   </body>
