@@ -42,6 +42,11 @@ function findNewTemp(response) {
   celciusLink.addEventListener("click", getCelciusTemperature);
   let fahrenheitLink = document.querySelector("#fahrenheit-link");
   fahrenheitLink.addEventListener("click", getFahrenheitTemperature);
+  let weatherIcon = document.querySelector("#icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function locationInput(event) {
@@ -78,6 +83,12 @@ function currentLocationInput(event) {
     }
     let celciusLink = document.querySelector("#celcius-link");
     celciusLink.addEventListener("click", getCelciusTemperature);
+    let weatherIcon = document.querySelector("#icon");
+    weatherIcon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    console.log(response.data.weather[0].icon);
   }
   function showCurrentPosition(response) {
     let lon = response.coords.longitude;
