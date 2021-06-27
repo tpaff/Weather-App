@@ -93,4 +93,3 @@ function currentLocationInput(event) {
 
 let myLocationForm = document.querySelector("#current-location");
 myLocationForm.addEventListener("submit", currentLocationInput);
-alert("this one?");
