@@ -68,6 +68,7 @@ function findNewTemp(response) {
 
 let locationForm = document.querySelector("#location-form");
 locationForm.addEventListener("submit", locationInput);
+
 function currentLocationInput(event) {
   event.preventDefault();
   function getGeoLocal(response) {

@@ -86,6 +86,7 @@ function currentLocationInput(event) {
     let apiKey = `c3bfba90b1c5452842fe95db5fc692a0`;
     let units = `metric`;
     let geoLocalUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+    console.log(geoLocalUrl);
     axios.get(geoLocalUrl).then(extractTemperature);
   }
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
