@@ -1,27 +1,31 @@
-let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-function getTime() {
+function getTime(timestamp) {
+  let now = new Date(timestamp);
+  console.log(now);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let day = days[now.getDay()];
   let currentDate = document.querySelector("#current-date");
   currentDate.innerHTML = `${day} `;
+
   let hour = now.getHours();
+
   let minute = now.getMinutes();
   minute = minute.toString();
+
   if (minute.length !== 2) {
     minute = `0${minute}`;
   }
+
   let currentTime = document.querySelector("#exact-time");
   currentTime.innerHTML = `${hour}:${minute}`;
 }
-getTime();
 
 function displayForecast(response) {
   console.log(response.data.daily);
@@ -96,6 +100,7 @@ function extractTemperature(response) {
   let humidityDisplay = document.querySelector("#humidity");
   humidityDisplay.innerHTML = `${response.data.main.humidity}`;
   getForecast(response.data.coord);
+  getTime(response.data.dt * 1000);
 }
 
 function search(city) {
