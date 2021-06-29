@@ -20,7 +20,7 @@
       <h1>Weather App</h1>
       <div class="row">
         <div class="col-7 temp-banner">Current Temperature</div>
-        <div class="col-5 forcast">5 Day Forcast</div>
+        <div class="col-5 forecast-banner">5 Day Forecast</div>
       </div>
       <div class="row">
         <div class="card col-7">
@@ -50,18 +50,8 @@
             </p>
           </div>
         </div>
-        <div class="card col-5">
-          <span class="weather-forecast-day">Thurs</span>
-          <img
-            src="http://openweathermap.org/img/wn/50d@2x.png"
-            alt=""
-            width="42"
-          />
-          <span class="weather-forecast-temperatures">
-            <span class="weather-forecast-max-temperature"> 18° </span>
-            <span class="weather-forecast-min-temperature"> 12° </span>
-          </span>
-        </div>
+        <div class="card col-5" id="five-day-forecast"></div>
+
         <form id="location-form">
           <input type="text" placeholder="New Location" id="location-input" />
           <input type="submit" value="Submit" id="new-location" />

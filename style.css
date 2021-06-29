@@ -5,7 +5,12 @@ h1 {
   text-align: center;
   padding: 5px 0;
 }
-.forcast {
+.forecast {
+  text-align: center;
+  padding: 5px 0;
+}
+
+.forecast-banner {
   border: 1px solid purple;
   text-align: center;
   padding: 5px 0;

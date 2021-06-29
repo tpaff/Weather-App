@@ -23,6 +23,38 @@ function getTime() {
 }
 getTime();
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#five-day-forecast");
+
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  let forecastHTML = `<div class="forecast">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+            <span class="weather-forecast-day">${day}</span>
+            <img
+              src="http://openweathermap.org/img/wn/50d@2x.png"
+              alt=""
+              width="42"
+            />
+            <span class="weather-forecast-temperatures">
+              <span class="weather-forecast-max-temperature"> 18° </span>
+              <span class="weather-forecast-min-temperature"> 12° </span>
+            </span> <br />
+          `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+}
+
 function extractTemperature(response) {
   let newLocation = document.querySelector("#location-found");
   newLocation.innerHTML = `${response.data.name}`;
@@ -60,6 +92,7 @@ function extractTemperature(response) {
 
   let humidityDisplay = document.querySelector("#humidity");
   humidityDisplay.innerHTML = `${response.data.main.humidity}`;
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -94,3 +127,4 @@ function currentLocationInput(event) {
 
 let myLocationForm = document.querySelector("#current-location");
 myLocationForm.addEventListener("submit", currentLocationInput);
+displayForecast();
