@@ -51,14 +51,30 @@
           </div>
         </div>
         <div class="card col-5 five-day-forecast" id="five-day-forecast"></div>
-
-        <form id="location-form">
-          <input type="text" placeholder="New Location" id="location-input" />
-          <input type="submit" value="Submit" id="new-location" />
-        </form>
-        <form id="current-location">
-          <input type="submit" value="Current Location" id="current-location" />
-        </form>
+        <span class="forms">
+          <form id="location-form">
+            <input
+              type="text"
+              placeholder="New Location..."
+              id="location-input"
+              class="new-location"
+            />
+            <input
+              type="submit"
+              value="Submit"
+              id="new-location"
+              class="submit"
+            />
+          </form>
+          <form id="current-location">
+            <input
+              class="current-location"
+              type="submit"
+              value="Current Location"
+              id="current-location"
+            />
+          </form>
+        </span>
       </div>
       <span class="source-link">
         <a
