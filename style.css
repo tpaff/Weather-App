@@ -7,11 +7,14 @@ h1 {
 }
 .forecast {
   text-align: center;
-  padding: 5px 0;
+  padding: 50px 0;
+}
+.weather-forecast-day {
+  max-height: 1px;
 }
 
 .forecast-banner {
-  border: 1px solid purple;
+  border: 1px solid #212529;
   text-align: center;
   padding: 5px 0;
 }
@@ -23,11 +26,19 @@ h1 {
 }
 .country-location {
 }
+
 .card-style {
   padding: 10px;
-  text-align: left;
+  text-align: center;
 }
 .diff-day {
   list-style: none;
   font-size: 12px;
+}
+.current-condition {
+  text-transform: capitalize;
+}
+.source-link {
+  font-size: 10px;
+  color: #212529;
 }

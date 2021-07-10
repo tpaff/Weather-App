@@ -24,7 +24,7 @@
       </div>
       <div class="row">
         <div class="card col-7">
-          <div class="card-body card-style">
+          <div class="card-body card-style current-temp-card">
             <h5 class="card-title">
               <span
                 ><img
@@ -41,17 +41,18 @@
               / <span id="high-temp"></span>
             </h6>
             <p class="card-text" id="location-found">Location</p>
-            <p id="current-condition"></p>
+            <p id="current-condition" class="current-condition"></p>
             <p id="current-time">
-              <span id="current-date"> </span><span id="exact-time"></span>
+              <span id="current-date"> </span>
+              <span id="exact-time"></span>
             </p>
             <p id="extra-info">
-              Wind Speed: <span id="wind-speed"> </span>km/h Humidity:
+              Wind Speed: <span id="wind-speed"> </span>km/h <br />Humidity:
               <span id="humidity"> </span>%
             </p>
           </div>
         </div>
-        <div class="card col-5" id="five-day-forecast"></div>
+        <div class="card col-5 five-day-forecast" id="five-day-forecast"></div>
 
         <form id="location-form">
           <input type="text" placeholder="New Location" id="location-input" />
@@ -61,8 +62,15 @@
           <input type="submit" value="Current Location" id="current-location" />
         </form>
       </div>
-      <a href="https://github.com/tpaff/Weather-App" class:"source-link">Open
-      Source Link <br />by Tedi Paffile
+      <span class="source-link">
+        <a
+          href="https://github.com/tpaff/Weather-App"
+          class="source-link"
+          target="_blank"
+          >Open Source Code</a
+        >
+        by Tedi Paffile
+      </span>
     </div>
     <script src="scripts.js"></script>
   </body>
