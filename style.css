@@ -1,5 +1,6 @@
 h1 {
   text-align: center;
+  color: rgb(130, 32, 160);
 }
 .forecast {
   height: 40px;
@@ -36,15 +37,20 @@ h1 {
 }
 .new-location {
   background-color: rgba(130, 32, 160, 0.2);
+  border-radius: 3px;
+  border: none;
 }
 .submit {
   background-color: rgba(130, 32, 160, 0.6);
+  border-radius: 3px;
+  border: none;
 }
 .actual-temp {
 }
 .predicted-temp {
 }
-.city-location {
+.location {
+  font-weight: 900;
 }
 .country-location {
 }
@@ -52,6 +58,8 @@ h1 {
   display: inline;
 }
 .current-location {
+  border-radius: 3px;
+  border: none;
   background-color: rgba(226, 98, 13, 0.6);
 }
 .card-style {
@@ -69,3 +77,4 @@ h1 {
   font-size: 10px;
   color: #6f42c1;
 }
+.current-time;
