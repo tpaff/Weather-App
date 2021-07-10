@@ -7,6 +7,7 @@ function getForecastDay(timestamp) {
 
 function getTime(timestamp) {
   let now = new Date(timestamp);
+
   let days = [
     "Sunday",
     "Monday",
@@ -82,28 +83,18 @@ function extractTemperature(response) {
 
   let temperatureDisplay = document.querySelector(`#numerical-temperature`);
   temperatureDisplay.innerHTML = `${Math.round(response.data.main.temp)}`;
-
-  // function getFahrenheitTemperature() {
-  //   let actualTemperature = document.querySelector("#numerical-temperature");
-  //   actualTemperature.innerHTML = `${Math.round(
-  //     response.data.main.temp * (9 / 5) + 32
-  //   )}`;
-  // }
-  // let fahrenheitLink = document.querySelector("#fahrenheit-link");
-  // fahrenheitLink.addEventListener("click", getFahrenheitTemperature);
-
-  // function getCelciusTemperature() {
-  //   let actualTemperature = document.querySelector("#numerical-temperature");
-  //   actualTemperature.innerHTML = `${Math.round(response.data.main.temp)}`;
-  // }
-  // let celciusLink = document.querySelector("#celcius-link");
-  // celciusLink.addEventListener("click", getCelciusTemperature);
+  console.log(response);
 
   let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let highTempElement = document.querySelector("#high-temp");
+  highTempElement.innerHTML = `${Math.round(response.data.main.temp_max)}°`;
+
+  let lowTempElement = document.querySelector("#low-temp");
+  lowTempElement.innerHTML = `${Math.round(response.data.main.temp_min)}°`;
 
   let currentConditionElement = document.querySelector("#current-condition");
   currentConditionElement.innerHTML = `${response.data.weather[0].description}`;
@@ -139,7 +130,7 @@ function currentLocationInput(event) {
     let lon = response.coords.longitude;
     let lat = response.coords.latitude;
     let apiKey = `c3bfba90b1c5452842fe95db5fc692a0`;
-    let units = `metric`;
+    let units = `imperial`;
     let geoLocalUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
     console.log(geoLocalUrl);
     axios.get(geoLocalUrl).then(extractTemperature);
