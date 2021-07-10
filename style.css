@@ -1,23 +1,32 @@
 h1 {
-}
-.temp-banner {
-  border: 1px solid orange;
   text-align: center;
-  padding: 5px 0;
 }
 .forecast {
-  text-align: center;
-  padding: 50px 0;
+  height: 40px;
 }
-.weather-forecast-day {
-  max-height: 1px;
-}
-
-.forecast-banner {
-  border: 1px solid #212529;
+.temp-banner {
+  border: 13px ridge rgba(226, 98, 13, 0.6);
   text-align: center;
   padding: 5px 0;
 }
+.forecast-banner {
+  border: 13px ridge rgba(130, 32, 160, 0.6);
+  text-align: center;
+  padding: 5px 0;
+}
+.five-day-forecast {
+  text-align: center;
+  text-decoration: 42px;
+  padding: 70px 0;
+  border: 13px solid rgba(130, 32, 160, 0.2);
+}
+
+.current-temp-card {
+  text-align: center;
+  padding: auto;
+  border: 13px solid rgba(226, 98, 13, 0.2);
+}
+
 .actual-temp {
 }
 .predicted-temp {
@@ -40,5 +49,5 @@ h1 {
 }
 .source-link {
   font-size: 10px;
-  color: #212529;
+  color: #6f42c1;
 }

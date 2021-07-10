@@ -100,7 +100,9 @@ function extractTemperature(response) {
   currentConditionElement.innerHTML = `${response.data.weather[0].description}`;
 
   let windSpeedDisplay = document.querySelector("#wind-speed");
-  windSpeedDisplay.innerHTML = `${Math.round(response.data.wind.speed)}`;
+  windSpeedDisplay.innerHTML = `${Math.round(
+    response.data.wind.speed * 2.237
+  )}`;
 
   let humidityDisplay = document.querySelector("#humidity");
   humidityDisplay.innerHTML = `${response.data.main.humidity}`;
